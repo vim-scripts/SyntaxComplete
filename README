@@ -1,0 +1,35 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3172
+
+SyntaxComplete.vim is a plugin which uses the new Vim7 OMNI completion features (intellisense code completion).
+
+SyntaxComplete.vim version 5.0 is included in the Vim 7.2 release.
+SyntaxComplete.vim version 7.0 is included in the Vim 7.3 release.
+
+What does it do:
+-----------------------
+Vim has the ability to color syntax highlight nearly 500 languages.  Part of this highlighting includes knowing what keywords are part of a language.  Many filetypes already have custom completion scripts written for them, the syntaxcomplete plugin provides basic completion for all other filetypes.  It does this by populating the omni completion list with the text Vim already knows how to color highlight.  It can be used for any filetype and provides a minimal language-sensitive completion.
+
+There are not many languages with full blown OMNI completion scripts written in Vim.  Yet, having a list of functions and keywords to complete can be very handy especially when you are working with a predefined API.
+
+Adding the following to your .vimrc, will setup SyntaxComplete for every filetype that does not already have a language specific OMNI script:
+
+    if has("autocmd") && exists("+omnifunc")
+	autocmd Filetype *
+		    \	if &omnifunc == "" |
+		    \		setlocal omnifunc=syntaxcomplete#Complete |
+		    \	endif
+    endif
+
+
+It also provides some public functions so other plugin writers can pull syntax keywords (based on group names) from Vim and utilize them in any manor.  Examples are included in the help files, but here is a simple example:
+    let myKeywords = []
+    let myKeywords = OmniSyntaxList( ['sqlKeyword'] )
+    let allItems = OmniSyntaxList( [] )
+
+
+Existing instructions can be found within Vim7 using
+:h ft-syntax-omni
+
+This plugin is new to Vim7.  Improvements to the script will be uploaded here, and supplied to Bram for inclusion into future versions of Vim7.
+ 
+
