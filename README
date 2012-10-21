@@ -34,4 +34,6 @@ Existing instructions can be found within Vim7 using
 
 This plugin is new to Vim7.  Improvements to the script will be uploaded here, and supplied to Bram for inclusion into future versions of Vim7.
  
+There are many customizations which can be made per filetype via your .vimrc.  See the documentation for details.
+
 
