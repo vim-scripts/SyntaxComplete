@@ -9,6 +9,7 @@ SyntaxComplete.vim version 9.0 is included in the Vim 7.3 release.
 SyntaxComplete.vim version 10.0 is included in the Vim 7.3 release.
 SyntaxComplete.vim version 11.0 is included in the Vim 7.3 release.
 SyntaxComplete.vim version 12.0 is included in the Vim 7.3 release.
+SyntaxComplete.vim version 13.0 is included in the Vim 7.3 release.
 
 What does it do:
 -----------------------
@@ -30,6 +31,10 @@ It also provides some public functions so other plugin writers can pull syntax k
     let myKeywords = []
     let myKeywords = OmniSyntaxList( ['sqlKeyword'] )
     let allItems = OmniSyntaxList( [] )
+
+Regex can also be used to identify which syntax groups to include:
+    let myKeywords = OmniSyntaxList( ['html\w\+', 'jquery\w\+'] )
+
 
 
 Existing instructions can be found within Vim7 using
